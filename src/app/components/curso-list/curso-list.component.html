@@ -1,0 +1,21 @@
+<div class="col-md-4" *ngFor="let curso of cursos ">
+    <div class="card-text-center">
+        <div class="card-header bg-dark  text-white d-flex justify-content-between align-items-center">
+            {{curso.nombre}}
+            <button class="btn btn-danger " (click)= "deleteCurso(curso.id)">
+                <i class= " far fa-trash-alt"></i>
+            </button>
+           
+        </div>
+        <img [src]="curso.image" class="card-img-top">
+        <div class="card-body">
+            <p>{{curso.description}}</p>
+            <a [routerLink]="['/cursos/editar', curso.id]" class="btn btn-info btn-block">
+           
+                EDITAR CURSO
+            </a>
+        </div>
+
+    </div>
+
+</div>
